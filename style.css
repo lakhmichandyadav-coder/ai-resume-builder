@@ -450,3 +450,26 @@ button:hover {
 #resume.dark hr {
     border-color: #555555;
 }
+#resume.dark.classic p,
+#resume.dark.classic li,
+#resume.dark.classic strong,
+#resume.dark.professional p,
+#resume.dark.professional li,
+#resume.dark.professional strong {
+    color: #ffffff !important;
+}
+
+#resume.dark.classic h2,
+#resume.dark.professional h2 {
+    color: #00e5ff !important;
+}
+
+#resume.dark.classic {
+    background: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+#resume.dark.professional {
+    background: #1e1e1e !important;
+    color: #ffffff !important;
+}
