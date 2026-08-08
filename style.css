@@ -264,3 +264,83 @@ button:hover {
         margin: 0;
     }
 }
+/* ===== Resume Template Enhancements ===== */
+
+#resume.classic {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #ffffff;
+    color: #222222;
+    border: 1px solid #222222;
+    border-top: 7px solid #222222;
+}
+
+#resume.classic h2 {
+    color: #222222;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#resume.modern {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+    border: none;
+    border-top: 7px solid #2563eb;
+}
+
+#resume.modern h2 {
+    color: #2563eb;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+#resume.professional {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #1f2937;
+    border: none;
+    border-left: 8px solid #111827;
+    border-radius: 5px;
+}
+
+#resume.professional h2 {
+    color: #111827;
+    text-align: left;
+    font-size: 30px;
+    border-bottom: 2px solid #111827;
+    padding-bottom: 10px;
+}
+
+/* Better links */
+
+#resume a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#resume a:hover {
+    text-decoration: underline;
+}
+
+/* Better lists */
+
+#resume li {
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+/* Better mobile resume */
+
+@media (max-width: 600px) {
+
+    #resume.classic h2,
+    #resume.modern h2,
+    #resume.professional h2 {
+        font-size: 24px;
+    }
+
+    #resume img {
+        width: 100px;
+        height: 100px;
+    }
+}
