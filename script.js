@@ -10,16 +10,19 @@ function generateResume() {
     let languages = document.getElementById("languages").value;
     let github = document.getElementById("github").value;
     let linkedin = document.getElementById("linkedin").value;
+    let summary = document.getElementById("summary").value;
     let today = new Date().toLocaleDateString();
     let photo = document.getElementById("photo").files[0];
     let template = document.getElementById("template").value;
-    let skillsList = skills.split(",");
-    let  summary = document.getElementById("summary").value;
-    if(summary===""){
-        summary = "Motivated professional with skill in " + skills +
-        ".Ready to learn and contribute to projects.";
-    }
 
+    let skillsList = skills.split(",");
+
+    if (summary === "") {
+        summary =
+            "Motivated professional with skills in " +
+            skills +
+            ". Ready to learn and contribute to projects.";
+    }
 
     if (
         name === "" ||
@@ -28,7 +31,7 @@ function generateResume() {
         education === "" ||
         skills === "" ||
         experience === "" ||
-        projects === ""||
+        projects === "" ||
         languages === "" ||
         github === "" ||
         linkedin === ""
@@ -36,103 +39,158 @@ function generateResume() {
         alert("Please fill all fields!");
         return;
     }
-     let resume =
-     document.getElementById("resume");
 
-     resume.className = "";
+    let resume = document.getElementById("resume");
 
-if (template === "classic") {
-    resume.classList.add("classic");
-}
-else if (template === "modern") {
-    resume.classList.add("modern");
-}
-else if (template === "professional") {
-    resume.classList.add("professional");
-}
+    // Remove previous template and dark-mode classes
+    resume.className = "";
 
-    document.getElementById("resume").innerHTML = `
+    // Apply selected template
+    if (template === "classic") {
+        resume.classList.add("classic");
+    } 
+    else if (template === "modern") {
+        resume.classList.add("modern");
+    } 
+    else if (template === "professional") {
+        resume.classList.add("professional");
+    }
+
+    let photoHTML = "";
+
+    if (photo) {
+        photoHTML = `
+            <img 
+                src="${URL.createObjectURL(photo)}"
+                width="120"
+                height="120"
+                style="border-radius:50%;object-fit:cover;"
+            >
+        `;
+    }
+
+    resume.innerHTML = `
         <h2>My Resume</h2>
         <hr>
 
-        ${photo ? `<img src="${URL.createObjectURL(photo)}" width="120" height="120" style="border-radius:50%;object-fit:cover;">` : ""}
+        ${photoHTML}
 
         <p>👤 <strong>Name:</strong> ${name}</p>
+
         <p>📧 <strong>Email:</strong> ${email}</p>
+
         <p>📞 <strong>Phone:</strong> ${phone}</p>
+
         <p>🎓 <strong>Education:</strong> ${education}</p>
+
         <p>💻 <strong>Skills:</strong></p>
-<ul>
-    ${skillsList.map(skill => `<li>${skill.trim()}</li>`).join("")}
-</ul>
+
+        <ul>
+            ${skillsList
+                .map(skill => `<li>${skill.trim()}</li>`)
+                .join("")}
+        </ul>
+
         <p>💼 <strong>Experience:</strong> ${experience}</p>
+
         <p>📂 <strong>Projects:</strong></p>
-<p>${projects}</p>
+        <p>${projects}</p>
+
         <p>🗣️ <strong>Languages:</strong></p>
-<p>${languages}</p>
-<p>🐙 <strong>GitHub:</strong></p>
-<p><a href="${github}" target="_blank">${github}</a></p>
-<p>💼<strong>Linkedin:</strong></p>
-<p><a href="${linkedin}" target="_blank">${linkedin}</a></p>
+        <p>${languages}</p>
+
+        <p>🐙 <strong>GitHub:</strong></p>
+        <p>
+            <a href="${github}" target="_blank">
+                ${github}
+            </a>
+        </p>
+
+        <p>💼 <strong>LinkedIn:</strong></p>
+        <p>
+            <a href="${linkedin}" target="_blank">
+                ${linkedin}
+            </a>
+        </p>
 
         <p><strong>Professional Summary:</strong></p>
         <p>${summary}</p>
 
         <p><strong>🎯 Career Objective:</strong></p>
-        <p>To obtain a challenging position where I can apply my skills, learn continuously, and contribute to the organization's success.</p>
+
+        <p>
+            To obtain a challenging position where I can apply my skills,
+            learn continuously, and contribute to the organization's success.
+        </p>
 
         <p>📅 <strong>Date:</strong> ${today}</p>
-    `;}
+    `;
+}
 
-function clearForm()
- {
-    
+
+// Clear Form
+
+function clearForm() {
+
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("phone").value = "";
     document.getElementById("education").value = "";
     document.getElementById("skills").value = "";
     document.getElementById("experience").value = "";
-    document.getElementById("photo").value = "";
-    document.getElementById("resume").innerHTML = "";
+    document.getElementById("projects").value = "";
+    document.getElementById("languages").value = "";
+    document.getElementById("github").value = "";
+    document.getElementById("linkedin").value = "";
     document.getElementById("summary").value = "";
+    document.getElementById("photo").value = "";
 
+    document.getElementById("resume").innerHTML = "";
+    document.getElementById("resume").className = "";
 }
-function downloadPDF(){
-        window.print();
-    }
+
+
+// Download PDF
+
+function downloadPDF() {
+    window.print();
+}
+
 
 // AI Summary Generator
 
-function generateAI(){
+function generateAI() {
 
     let skills = document.getElementById("skills").value;
     let experience = document.getElementById("experience").value;
 
     let aiSummary = "";
 
-    if(experience.toLowerCase() === "fresher"){
+    if (experience.toLowerCase() === "fresher") {
 
-        aiSummary = "A motivated fresher with skills in "
-        + skills +
-        ". Eager to learn new technologies and contribute to professional projects.";
+        aiSummary =
+            "A motivated fresher with skills in " +
+            skills +
+            ". Eager to learn new technologies and contribute to professional projects.";
 
     } 
     else {
 
-        aiSummary = "An experienced professional with expertise in "
-        + skills +
-        ". Skilled in problem solving and delivering quality results.";
-
+        aiSummary =
+            "An experienced professional with expertise in " +
+            skills +
+            ". Skilled in problem solving and delivering quality results.";
     }
 
     document.getElementById("summary").value = aiSummary;
-
 }
 
-    function darkMode(){
-        let resume =
-        document.getElementById("resume");
 
-        resume.classList.toggle("dark");
-    }
+// Dark Mode
+
+function darkMode() {
+
+    let resume = document.getElementById("resume");
+
+    resume.classList.toggle("dark");
+}
