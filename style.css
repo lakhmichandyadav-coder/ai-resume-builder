@@ -428,3 +428,25 @@ button:hover {
         text-decoration: none;
     }
 }
+/* Dark Mode Text Fix */
+
+#resume.dark,
+#resume.dark p,
+#resume.dark li,
+#resume.dark strong,
+#resume.dark h2,
+#resume.dark h3 {
+    color: #ffffff;
+}
+
+#resume.dark a {
+    color: #00e5ff;
+}
+
+#resume.dark {
+    background: #1e1e1e;
+}
+
+#resume.dark hr {
+    border-color: #555555;
+}
