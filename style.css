@@ -473,3 +473,29 @@ button:hover {
     background: #1e1e1e !important;
     color: #ffffff !important;
 }
+/* FINAL DARK MODE FIX */
+
+#resume.dark.classic,
+#resume.dark.modern,
+#resume.dark.professional {
+    background: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+#resume.dark.classic *,
+#resume.dark.modern *,
+#resume.dark.professional * {
+    color: #ffffff !important;
+}
+
+#resume.dark.classic h2,
+#resume.dark.modern h2,
+#resume.dark.professional h2 {
+    color: #00e5ff !important;
+}
+
+#resume.dark.classic a,
+#resume.dark.modern a,
+#resume.dark.professional a {
+    color: #00e5ff !important;
+}
