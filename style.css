@@ -131,3 +131,15 @@ h2{
 .dark li {
     color:white;
 }
+#resume.dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+#resume.dark h2 {
+    color: #00bfff;
+}
+
+#resume.dark a {
+    color: #00bfff;
+}
