@@ -194,3 +194,78 @@ function darkMode() {
 
     resume.classList.toggle("dark");
 }
+// ===== Live Resume Preview =====
+
+function updateLivePreview() {
+
+    let preview = document.getElementById("livePreview");
+
+    if (!preview) {
+        return;
+    }
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let education = document.getElementById("education").value;
+    let skills = document.getElementById("skills").value;
+    let experience = document.getElementById("experience").value;
+    let projects = document.getElementById("projects").value;
+    let languages = document.getElementById("languages").value;
+    let github = document.getElementById("github").value;
+    let linkedin = document.getElementById("linkedin").value;
+    let summary = document.getElementById("summary").value;
+
+    preview.innerHTML = `
+        <h2>👀 Live Preview</h2>
+
+        <h3>${name || "Your Name"}</h3>
+
+        <p>📧 ${email || "Your Email"}</p>
+        <p>📞 ${phone || "Your Phone"}</p>
+
+        <h3>🎓 Education</h3>
+        <p>${education || "Your Education"}</p>
+
+        <h3>💻 Skills</h3>
+        <p>${skills || "Your Skills"}</p>
+
+        <h3>💼 Experience</h3>
+        <p>${experience || "Your Experience"}</p>
+
+        <h3>📂 Projects</h3>
+        <p>${projects || "Your Projects"}</p>
+
+        <h3>🗣️ Languages</h3>
+        <p>${languages || "Your Languages"}</p>
+
+        <h3>📝 Professional Summary</h3>
+        <p>${summary || "Your Professional Summary"}</p>
+
+        <h3>🔗 Profiles</h3>
+
+        <p>
+            🐙 GitHub:
+            ${github || "Your GitHub Profile"}
+        </p>
+
+        <p>
+            💼 LinkedIn:
+            ${linkedin || "Your LinkedIn Profile"}
+        </p>
+    `;
+}
+
+
+// Update preview whenever the user types
+
+document.addEventListener("input", function () {
+    updateLivePreview();
+});
+
+
+// Show preview when the page loads
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateLivePreview();
+});
