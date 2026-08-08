@@ -1,0 +1,10 @@
+{
+  "name": "AI Resume Builder",
+  "short_name": "Resume Builder",
+  "start_url": "/ai-resume-builder/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "description": "Create professional resumes easily.",
+  "icons": []
+}
