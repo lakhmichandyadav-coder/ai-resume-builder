@@ -344,3 +344,87 @@ button:hover {
         height: 100px;
     }
 }
+/* ===== Professional Resume Sections ===== */
+
+#resume {
+    line-height: 1.6;
+}
+
+#resume p strong {
+    color: #374151;
+}
+
+#resume ul {
+    padding-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 18px;
+}
+
+#resume li {
+    margin-bottom: 7px;
+}
+
+/* Section spacing */
+
+#resume p strong:first-child {
+    font-weight: 700;
+}
+
+/* GitHub & LinkedIn */
+
+#resume a {
+    color: #2563eb;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+#resume a:hover {
+    text-decoration: underline;
+}
+
+/* Classic */
+
+#resume.classic p strong {
+    color: #222222;
+}
+
+#resume.classic a {
+    color: #222222;
+}
+
+/* Modern */
+
+#resume.modern p strong {
+    color: #1d4ed8;
+}
+
+#resume.modern a {
+    color: #1d4ed8;
+}
+
+/* Professional */
+
+#resume.professional p strong {
+    color: #111827;
+}
+
+#resume.professional a {
+    color: #111827;
+}
+
+/* Resume print */
+
+@media print {
+
+    #resume {
+        width: 100%;
+        margin: 0;
+        padding: 25px;
+        box-shadow: none !important;
+    }
+
+    #resume a {
+        color: #000000 !important;
+        text-decoration: none;
+    }
+}
